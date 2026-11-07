@@ -1,0 +1,352 @@
+/* style.css: styling Maja Koffie */
+
+/* ===== Variabel warna agar konsisten di semua halaman ===== */
+:root {
+    --cream: #f7e8d6;      /* warna latar halaman */
+    --card: #fdf6e9;       /* warna latar kartu dan tombol krem */
+    --red: #8e2316;        /* merah bata: judul, tombol utama, menu aktif */
+    --green: #2f5f26;      /* hijau tua: kartu hero dan judul item */
+    --ink: #3a2a1e;        /* coklat tua: garis tepi dan teks */
+    --muted: #6b5a4c;      /* warna teks sekunder */
+}
+
+/* ===== Reset dasar ===== */
+* {
+    box-sizing: border-box; /* padding tidak menambah lebar elemen */
+}
+
+/* ===== Body ===== */
+body {
+    display: flex;                                     /* susun konten dan footer vertikal */
+    flex-direction: column;                            /* footer berada di bagian paling bawah */
+    min-height: 100vh;                                 /* halaman minimal setinggi layar */
+    margin: 0;                                         /* hilangkan margin bawaan browser */
+    background: var(--cream);                          /* latar krem */
+    color: var(--ink);                                 /* warna teks utama */
+    font-family: 'Space Grotesk', Arial, sans-serif;   /* font referensi, cadangan Arial */
+    font-size: 16px;                                   /* ukuran teks dasar */
+    line-height: 1.5;                                  /* jarak antar baris */
+}
+
+/* ===== Pembungkus konten ===== */
+.container {
+    width: 100%;             /* penuh selebar layar */
+    max-width: 960px;        /* lebar maksimal di desktop */
+    margin: 0 auto;          /* posisikan di tengah */
+    flex: 1;                 /* isi ruang agar footer terdorong ke bawah */
+    padding: 24px 20px 24px; /* ruang bawah konten */
+}
+
+/* ===== Brand (logo + nama) ===== */
+.brand {
+    display: flex;           /* logo dan teks sejajar */
+    align-items: center;     /* sejajarkan vertikal */
+    gap: 16px;               /* jarak logo ke teks */
+}
+
+/* Ukuran logo */
+.logo {
+    width: 56px;             /* lebar logo */
+    height: 64px;            /* tinggi logo */
+    flex-shrink: 0;          /* logo tidak mengecil */
+}
+
+/* Nama kafe */
+.brand-name {
+    margin: 0;               /* hapus margin */
+    color: var(--red);       /* merah bata */
+    font-size: 2rem;         /* ukuran besar */
+    font-weight: 700;        /* tebal */
+    letter-spacing: 1px;     /* renggang antar huruf */
+    line-height: 1.1;        /* rapatkan baris */
+}
+
+/* Tagline kafe */
+.brand-tag {
+    margin: 4px 0 0;         /* jarak atas kecil */
+    color: var(--muted);     /* warna sekunder */
+    font-size: 0.95rem;      /* sedikit lebih kecil */
+}
+
+/* ===== Label jam buka ===== */
+.open-pill {
+    display: inline-flex;            /* titik dan teks sejajar */
+    align-items: center;             /* sejajarkan vertikal */
+    gap: 8px;                        /* jarak titik ke teks */
+    margin: 18px 0;                  /* jarak atas bawah */
+    padding: 6px 14px 6px 8px;       /* ruang dalam */
+    background: var(--card);         /* latar kartu */
+    border: 1.5px dashed var(--ink); /* garis tepi putus-putus seperti referensi */
+    border-radius: 999px;            /* bentuk kapsul */
+    font-size: 0.9rem;               /* teks kecil */
+}
+
+/* Titik hijau dengan lingkaran halo */
+.dot {
+    width: 12px;                              /* lebar titik */
+    height: 12px;                             /* tinggi titik */
+    background: var(--green);                 /* hijau */
+    border-radius: 50%;                       /* bulat */
+    box-shadow: 0 0 0 5px #cfe6c8;            /* halo hijau muda */
+    margin: 0 4px;                            /* ruang agar halo tidak terpotong */
+}
+
+/* ===== Pesan notifikasi ===== */
+.flash {
+    padding: 12px 16px;              /* ruang dalam */
+    border-radius: 14px;             /* sudut membulat */
+    border: 2px solid var(--ink);    /* garis tepi */
+    margin-bottom: 18px;             /* jarak ke konten */
+    font-weight: 500;                /* sedikit tebal */
+}
+.flash.success { background: #dcecd5; } /* sukses: hijau muda */
+.flash.error { background: #f5d3cd; }   /* error: merah muda */
+
+/* ===== Hero (kartu hijau) ===== */
+.hero {
+    background: var(--green);             /* latar hijau tua */
+    color: #fdf6e9;                       /* teks krem */
+    border: 2px solid #1f3d19;            /* garis tepi hijau lebih gelap */
+    border-radius: 28px;                  /* sudut sangat membulat */
+    padding: 24px;                        /* ruang dalam */
+    box-shadow: 0 4px 0 rgba(0,0,0,.25);  /* bayangan bawah */
+}
+.hero h2 {
+    margin: 0 0 10px;       /* jarak bawah */
+    font-size: 1.5rem;      /* ukuran judul hero */
+}
+.hero p {
+    margin: 0 0 18px;       /* jarak bawah */
+    font-size: 1.1rem;      /* teks deskripsi */
+}
+.hero-actions {
+    display: flex;          /* tombol berderet */
+    flex-wrap: wrap;        /* turun baris jika sempit */
+    gap: 10px;              /* jarak antar tombol */
+}
+
+/* ===== Tombol ===== */
+.btn {
+    display: inline-block;                   /* bisa diberi padding */
+    padding: 12px 20px;                      /* ruang dalam tombol */
+    background: var(--red);                  /* merah bata */
+    color: #fff;                             /* teks putih */
+    border: 2px solid #5e1309;               /* garis tepi merah tua */
+    border-radius: 999px;                    /* bentuk kapsul */
+    font-family: inherit;                    /* ikut font halaman */
+    font-size: 0.95rem;                      /* ukuran teks */
+    font-weight: 700;                        /* tebal */
+    text-decoration: none;                   /* tanpa garis bawah */
+    cursor: pointer;                         /* kursor tangan */
+    box-shadow: 0 3px 0 rgba(0,0,0,.25);     /* bayangan bawah */
+}
+.btn:hover { filter: brightness(1.1); }      /* sedikit lebih terang saat disorot */
+.btn:focus-visible { outline: 3px solid #e0a43a; outline-offset: 2px; } /* fokus keyboard terlihat */
+
+/* Tombol krem (Lihat menu, Edit, Batal) */
+.btn-cream {
+    background: var(--card);       /* latar krem */
+    color: var(--ink);             /* teks coklat */
+    border-color: #cdb79c;         /* garis tepi krem tua */
+}
+
+/* Tombol kecil di tabel dan daftar */
+.btn-small {
+    padding: 8px 16px;             /* ruang dalam lebih kecil */
+    border-radius: 12px;           /* sudut membulat (bukan kapsul) */
+    font-size: 0.85rem;            /* teks lebih kecil */
+}
+
+/* ===== Judul bagian ===== */
+.section-label {
+    margin: 28px 0 12px;           /* jarak atas bawah */
+    font-size: 0.85rem;            /* teks kecil */
+    letter-spacing: 2px;           /* renggang huruf */
+    color: var(--ink);             /* warna teks */
+}
+
+/* ===== Kartu umum ===== */
+.card {
+    background: var(--card);             /* latar kartu */
+    border: 2px solid var(--ink);        /* garis tepi coklat tua */
+    border-radius: 22px;                 /* sudut membulat */
+    margin-bottom: 20px;                 /* jarak antar kartu */
+    overflow: hidden;                    /* isi tidak keluar dari sudut */
+}
+
+/* ===== Daftar pilihan cepat (Home) ===== */
+.quick-item {
+    display: flex;                       /* ikon, teks, tombol sejajar */
+    align-items: center;                 /* sejajarkan vertikal */
+    gap: 14px;                           /* jarak antar bagian */
+    padding: 16px;                       /* ruang dalam */
+    border-bottom: 1.5px solid #e6d5bf;  /* garis pemisah antar item */
+}
+.quick-item:last-child { border-bottom: 0; } /* item terakhir tanpa garis */
+.quick-icon {
+    width: 52px;                         /* lebar kotak ikon */
+    height: 52px;                        /* tinggi kotak ikon */
+    display: grid;                       /* untuk memusatkan ikon */
+    place-items: center;                 /* ikon di tengah */
+    flex-shrink: 0;                      /* kotak tidak mengecil */
+    background: #fff9ef;                 /* latar kotak ikon */
+    border: 2px solid var(--ink);        /* garis tepi kotak */
+    border-radius: 14px;                 /* sudut membulat */
+    font-size: 1.4rem;                   /* ukuran ikon */
+}
+.quick-text { flex: 1; }                 /* teks mengisi sisa ruang */
+.quick-text strong {
+    display: block;                      /* judul di baris sendiri */
+    color: var(--green);                 /* judul hijau seperti referensi */
+    font-size: 1.1rem;                   /* ukuran judul item */
+}
+.quick-text small { color: var(--muted); } /* deskripsi kecil warna sekunder */
+
+/* ===== Form ===== */
+.form-card { padding: 20px; }            /* ruang dalam kartu form */
+.form-card h4 {
+    margin: 0 0 12px;                    /* jarak bawah judul form */
+    color: var(--green);                 /* judul hijau */
+    font-size: 1.2rem;                   /* ukuran judul form */
+}
+label {
+    display: block;                      /* label di baris sendiri */
+    margin: 12px 0 4px;                  /* jarak atas bawah */
+    font-size: 0.9rem;                   /* teks kecil */
+    font-weight: 600;                    /* agak tebal */
+}
+input[type="text"], input[type="number"], select {
+    width: 100%;                         /* penuh selebar kartu */
+    padding: 11px 14px;                  /* ruang dalam */
+    background: #fff9ef;                 /* latar input */
+    border: 2px solid var(--ink);        /* garis tepi */
+    border-radius: 14px;                 /* sudut membulat */
+    font-family: inherit;                /* ikut font halaman */
+    font-size: 1rem;                     /* ukuran teks (16px agar tidak zoom di iOS) */
+    color: var(--ink);                   /* warna teks */
+}
+input:focus, select:focus { outline: 3px solid #e0a43a; outline-offset: 1px; } /* fokus terlihat */
+.form-actions {
+    display: flex;                       /* tombol berderet */
+    gap: 10px;                           /* jarak antar tombol */
+    margin-top: 18px;                    /* jarak dari input */
+}
+
+/* ===== Tabel ===== */
+.table-wrap { overflow-x: auto; }        /* tabel bisa digulir ke samping jika sempit */
+table {
+    width: 100%;                         /* tabel penuh */
+    border-collapse: collapse;           /* garis sel menyatu */
+}
+th {
+    background: var(--red);              /* kepala tabel merah bata */
+    color: #fff;                         /* teks putih */
+    text-align: left;                    /* rata kiri */
+    padding: 12px 14px;                  /* ruang dalam */
+    font-size: 0.85rem;                  /* teks kecil */
+    white-space: nowrap;                 /* judul kolom tidak patah */
+}
+td {
+    padding: 12px 14px;                  /* ruang dalam sel */
+    border-bottom: 1.5px solid #e6d5bf;  /* garis pemisah baris */
+    vertical-align: middle;              /* isi sel di tengah */
+    font-size: 0.95rem;                  /* ukuran teks sel */
+}
+tr:last-child td { border-bottom: 0; }   /* baris terakhir tanpa garis */
+.actions { white-space: nowrap; }        /* tombol aksi tidak patah baris */
+.actions form, .actions a { display: inline-block; margin-right: 6px; } /* tombol Edit dan Hapus sejajar */
+
+/* ===== Badge status order ===== */
+.badge {
+    display: inline-block;               /* bisa diberi padding */
+    padding: 3px 12px;                   /* ruang dalam */
+    border: 1.5px solid var(--ink);      /* garis tepi */
+    border-radius: 999px;                /* bentuk kapsul */
+    font-size: 0.8rem;                   /* teks kecil */
+    font-weight: 600;                    /* agak tebal */
+}
+.badge-pending { background: #fbe7b8; }  /* Pending: kuning */
+.badge-diproses { background: #f5d3cd; } /* Diproses: merah muda */
+.badge-selesai { background: #dcecd5; }  /* Selesai: hijau muda */
+
+/* ===== Hak cipta (footer paling bawah) ===== */
+.copyright {
+    padding: 8px 16px 96px; /* ruang bawah agar tidak tertutup navigasi */
+    color: var(--muted);    /* warna teks sekunder */
+    font-size: 0.85rem;     /* teks kecil */
+    text-align: center;     /* rata tengah */
+}
+.copyright p { margin: 0; } /* hilangkan margin bawaan paragraf */
+
+/* ===== Navigasi bawah ===== */
+.bottom-nav {
+    position: fixed;                     /* menempel di bawah layar */
+    bottom: 12px;                        /* jarak dari tepi bawah */
+    left: 50%;                           /* posisi tengah horizontal */
+    transform: translateX(-50%);         /* koreksi agar benar-benar di tengah */
+    width: calc(100% - 24px);            /* lebar mengikuti layar dikurangi margin */
+    max-width: 560px;                    /* batas lebar di layar besar */
+    display: flex;                       /* menu berderet */
+    background: var(--card);             /* latar krem */
+    border: 2px solid var(--ink);        /* garis tepi */
+    border-radius: 24px;                 /* sudut membulat */
+    overflow: hidden;                    /* menu aktif ikut membulat */
+    box-shadow: 0 4px 0 rgba(0,0,0,.2);  /* bayangan bawah */
+    z-index: 10;                         /* di atas konten */
+}
+.bottom-nav a {
+    flex: 1;                             /* setiap menu sama lebar */
+    display: flex;                       /* ikon di atas teks */
+    flex-direction: column;              /* susun vertikal */
+    align-items: center;                 /* rata tengah */
+    padding: 10px 4px;                   /* ruang dalam */
+    color: var(--ink);                   /* warna teks */
+    text-decoration: none;               /* tanpa garis bawah */
+    font-size: 0.85rem;                  /* teks kecil */
+    font-weight: 700;                    /* tebal */
+}
+.bottom-nav .ico { font-size: 1.2rem; line-height: 1.2; } /* ukuran ikon menu */
+.bottom-nav a.active {
+    background: var(--red);              /* menu aktif merah bata */
+    color: #fff;                         /* teks putih */
+}
+
+/* ===== Responsif: tablet (<= 768px) ===== */
+@media (max-width: 768px) {
+    .brand-name { font-size: 1.7rem; }   /* nama kafe sedikit lebih kecil */
+}
+
+/* ===== Responsif: smartphone (<= 640px), tabel berubah menjadi kartu ===== */
+@media (max-width: 640px) {
+    .container { padding: 18px 16px 24px; } /* padding lebih kecil */
+    thead { display: none; }                 /* sembunyikan kepala tabel */
+    table, tbody, tr, td { display: block; width: 100%; } /* susun sel menjadi blok */
+    tr { border-bottom: 2px solid var(--ink); padding: 6px 0; } /* tiap baris menjadi kartu */
+    tr:last-child { border-bottom: 0; }      /* baris terakhir tanpa garis */
+    td {
+        display: flex;                       /* label di kiri, nilai di kanan */
+        justify-content: space-between;      /* label dan nilai berjauhan */
+        gap: 12px;                           /* jarak label ke nilai */
+        border-bottom: 0;                    /* hilangkan garis antar sel */
+        padding: 6px 14px;                   /* ruang dalam sel */
+        text-align: right;                   /* nilai rata kanan */
+    }
+    td::before {
+        content: attr(data-label);           /* ambil teks label dari atribut data-label */
+        font-weight: 700;                    /* label tebal */
+        color: var(--muted);                 /* warna sekunder */
+        text-align: left;                    /* label rata kiri */
+    }
+    .actions { justify-content: flex-end; }  /* tombol aksi rata kanan */
+    .quick-item { flex-wrap: wrap; }         /* item bisa turun baris jika sempit */
+}
+
+/* ===== Responsif: desktop (>= 900px), form dua kolom ===== */
+@media (min-width: 900px) {
+    .form-card form {
+        display: grid;                         /* susun input dalam grid */
+        grid-template-columns: 1fr 1fr;        /* dua kolom */
+        column-gap: 20px;                      /* jarak antar kolom */
+    }
+    .form-card .form-actions { grid-column: 1 / -1; } /* tombol memanjang dua kolom */
+}
