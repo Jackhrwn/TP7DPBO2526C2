@@ -86,9 +86,10 @@ Contoh alur tambah order:
 
 ## 7. Dokumentasi
 ### Dokumentasi Program Website(Menampilkan sistem CRUD)
-<video src="Dokumentasi/Dokumentasi%20CRUD%20Website.mp4" controls width="100%"></video>
+- [▶️ Tonton Video CRUD Website (via Google Drive)](https://drive.google.com/file/d/1eGsTXdWTHgQviVoFyKD406opcjkdeR0U/view?usp=sharing)
 
 ### Dokumentasi Mekanisme Foreign Key
+- [▶️ Tonton Video Mekanisme Foreign Key (via Google Drive)](https://drive.google.com/file/d/1Tc2KskH4oU6CqV-91l3X0gmiH2GeJ89a/view?usp=sharing)
 ---
 
 
