@@ -39,7 +39,8 @@ maja-koffie/
 │   └── db.php         -> class Database (koneksi PDO)
 ├── database/
 │   └── db_cafe.sql    -> struktur dan data database
-├── Dokumentasi        
+├── Dokumentasi
+│   ├── .gitattributes -> berisi instruksi yang memberi tahu Git bahwa file .mp4 harus diproses menggunakan Git LFS 
 │   ├── Dokumentasi CRUD Website.mp4 -> dokumentasi program website(Menampilkan sistem CRUD)
 │   └── Dokuementasi Foreign Key.mp4 -> dokumentasi mekanisme foreign key
 ├── view/
@@ -85,6 +86,7 @@ Contoh alur tambah order:
 
 ## 7. Dokumentasi
 ### Dokumentasi Program Website(Menampilkan sistem CRUD)
+<video src="Dokumentasi/Dokumentasi%20CRUD%20Website.mp4" controls width="100%"></video>
 
 ### Dokumentasi Mekanisme Foreign Key
 ---
